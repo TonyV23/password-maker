@@ -24,6 +24,15 @@ function generatePassword (){
         passwordGenearated += (data[Math.floor(Math.random() * data.length)]);     
     }
     passwordOutput.value = passwordGenearated;
+
+    //to copy the generated code to clipboard
+    passwordOutput.select();
+    document.execCommand("copy");
+    generateButton.textContent = "password copied to clipboard";
+    setTimeout(() => {
+        generateButton.textContent = "Generate a password";
+    }, 3000);
+    
 };
 
 generateButton.addEventListener("click", ()=>{
